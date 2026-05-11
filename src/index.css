@@ -1,0 +1,9 @@
+@import "tailwindcss" important;
+
+.maplibregl-popup {
+  z-index: 1000;
+}
+
+.swipe-control {
+  display: none;
+}
