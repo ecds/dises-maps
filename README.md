@@ -120,7 +120,7 @@ done
 
 The ruby script [geoserver.rb](geoserver.rb) is an example of how to Add the resulting GeoTIFFs to the GeoServer as layers.
 
-You must upload the processed GeoTIFFs to the GeoServer before the steps taken in the ruby script. NOTE: The script assumes you the the location where you uploaded the files in line 10:
+You must upload the processed GeoTIFFs to the GeoServer before the steps taken in the ruby script. NOTE: The script assumes the location where you uploaded the files in line 10:
 
 ```ruby
   add_layer_string = "file:/mnt2/data/public/#{workspace}/3857/#{tiff}"
