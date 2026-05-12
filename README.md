@@ -2,6 +2,30 @@
 
 Components used for the [Thriving Future Cropscapes](https://www.thrivingfuturecropscapes.org/data-visualizations/) data visualizations.
 
+## Example Use in Static HTML
+
+Include the [CSS]() and [JavaScript File]() in the HTML document. In the body, include an empty DIV element with the id "map-viz". The JavaScript will take over that DIV and render the visualization. Below is a simple example.
+
+```html
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      id="map-viz-styles-css"
+      href="https://dises-public.s3.us-east-1.amazonaws.com assets/index.css?ver=1.0.0"
+      media="all"
+    />
+  </head>
+  <body>
+    <div id="map-viz"></div>
+    <script
+      src="https://dises-public.s3.us-east-1.amazonaws.com/assets/index.js?ver=1.0.0"
+      id="map-viz-js-js"
+    ></script>
+  </body>
+</html>
+```
+
 ## Run the Components Locally
 
 Install the dependencies and run the dev server:
