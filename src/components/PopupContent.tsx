@@ -129,7 +129,7 @@ const PopupContent = ({ map, activeCrop }: Props) => {
           >
             {activeCounty && (
               <>
-                <h3 className="text-base capitalize">
+                <h3 className="text-sm md:text-base capitalize">
                   {activeCounty} County, {activeState}
                 </h3>
                 <p>District {activeDistrict}</p>
@@ -142,10 +142,10 @@ const PopupContent = ({ map, activeCrop }: Props) => {
                     </caption>
                     <tbody>
                       <tr className="border-b border-gray-100">
-                        <td className="px-4 py-3 text-gray-500 font-medium">
+                        <td className="px-2 py-1 md:px-4 md:py-3 text-xs text-gray-500 font-medium">
                           Current
                         </td>
-                        <td className="px-4 py-3 text-gray-800 font-semibold text-right">
+                        <td className="px-2 py-1 md:px-4 md:py-3 text-xs text-gray-800 font-semibold text-right">
                           {activeCropData.h}
                         </td>
                       </tr>
@@ -153,7 +153,7 @@ const PopupContent = ({ map, activeCrop }: Props) => {
                         <td className="px-4 py-3 text-gray-500 font-medium">
                           Future
                         </td>
-                        <td className="px-4 py-3 text-gray-800 font-semibold text-right">
+                        <td className="px-2 py-1 md:px-4 md:py-3 text-xs text-gray-800 font-semibold text-right">
                           {activeCropData.f}
                         </td>
                       </tr>

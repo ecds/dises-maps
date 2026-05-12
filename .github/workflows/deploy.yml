@@ -1,0 +1,41 @@
+name: Build and Deploy to S3
+
+on:
+  push:
+    branches:
+      - main # Set this to your default branch
+
+permissions:
+  id-token: write # Required for requesting the JWT
+  contents: read # Required for actions/checkout
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24" # Specify your preferred Node version
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Application
+        run: npm run build
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: us-east-1 # Change to your bucket's region
+          role-session-name: GitHubActionsWorkflow
+
+      - name: Deploy to S3
+        run: |
+          aws s3 sync ./dist s3://${{ secrets.S3_BUCKET_NAME }} --delete

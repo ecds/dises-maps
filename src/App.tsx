@@ -69,16 +69,19 @@ const App = () => {
 
   return (
     <div className="flex-col">
-      <section className="flex justify-between">
-        <div className="w-1/3 flex flex-col p-8 h-[150vh]">
+      <section className="flex flex-col-reverse md:flex-row justify-between">
+        <div className="w-full md:w-1/3 flex flex-col p-8 h-[150vh]">
           <CropSelect
             activeCrop={activeCrop}
             setActiveCrop={setActiveCrop}
             setActiveLayer={setActiveLayer}
           />
         </div>
-        <div className="w-2/3 sticky top-0 h-full">
-          <div className="h-[calc(100vh-145px)]" ref={mapContainerRef}></div>
+        <div className="w-full md:w-2/3 sticky top-0 h-full">
+          <div
+            className="h-[50vh] md:h-[calc(100vh-145px)]"
+            ref={mapContainerRef}
+          ></div>
         </div>
       </section>
       <PopupContent map={map} activeCrop={activeCrop} />
