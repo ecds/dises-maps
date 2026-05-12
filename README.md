@@ -4,7 +4,7 @@ Components used for the [Thriving Future Cropscapes](https://www.thrivingfuturec
 
 ## Example Use in Static HTML
 
-Include the [CSS]() and [JavaScript File]() in the HTML document. In the body, include an empty DIV element with the id "map-viz". The JavaScript will take over that DIV and render the visualization. Below is a simple example.
+Include the [CSS](https://dises-public.s3.us-east-1.amazonaws.com/assets/index.css) and [JavaScript File](https://dises-public.s3.us-east-1.amazonaws.com/assets/index.js) in the HTML document. In the body, include an empty DIV element with the id "map-viz". The JavaScript will take over that DIV and render the visualization. Below is a simple example.
 
 ```html
 <html>
@@ -12,7 +12,7 @@ Include the [CSS]() and [JavaScript File]() in the HTML document. In the body, i
     <link
       rel="stylesheet"
       id="map-viz-styles-css"
-      href="https://dises-public.s3.us-east-1.amazonaws.com assets/index.css?ver=1.0.0"
+      href="https://dises-public.s3.us-east-1.amazonaws.com/assets/index.css?ver=1.0.0"
       media="all"
     />
   </head>
