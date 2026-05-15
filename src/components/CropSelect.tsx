@@ -27,8 +27,7 @@ const CropSelect = ({ activeCrop, setActiveCrop }: Props) => {
     <Field>
       <Label
         htmlFor="crops"
-        // className="block mb-2.5 text-base md:text-xl font-medium text-heading font-league-gothic text-[#002C39] uppercase"
-        className="font-league-gothic text-lg md:text-2xl text-[#002C39] font-semibold uppercase"
+        className="font-league-gothic text-lg md:text-4xl text-[#002C39] font-semibold uppercase tracking-widest"
       >
         Crops
       </Label>

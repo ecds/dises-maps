@@ -40,7 +40,7 @@ const LayerSelect = ({ activeCrop, activeLayer, setActiveLayer }: Props) => {
   return (
     <div className="mt-4">
       <div className="hidden md:block">
-        <h4 className="font-league-gothic text-lg md:text-2xl text-[#002C39] font-semibold uppercase">
+        <h4 className="font-league-gothic text-lg md:text-4xl text-[#002C39] font-semibold uppercase tracking-widest">
           {activeCrop.crop} Layers
         </h4>
         <RadioGroup
@@ -54,7 +54,7 @@ const LayerSelect = ({ activeCrop, activeLayer, setActiveLayer }: Props) => {
               <Radio
                 key={layer.layer}
                 value={layer}
-                className="group font-league-gothic uppercase tracking-wider text-sm md:text-lg w-full md:w-auto font-semibold text-black/75 data-checked:text-white relative cursor-pointer rounded-lg bg-[#FFCC53]/75 px-5 py-4 shadow-md transition focus:not-data-focus:outline-none data-checked:bg-[#63AB46] data-focus:outline data-focus:outline-white"
+                className="group font-league-gothic uppercase tracking-wider text-sm md:text-2xl w-full md:w-auto font-semibold text-black/75 data-checked:text-white relative cursor-pointer rounded-lg bg-[#FFCC53]/75 px-5 py-4 shadow-md transition focus:not-data-focus:outline-none data-checked:bg-[#63AB46] data-focus:outline data-focus:outline-white"
               >
                 {layer.label}
               </Radio>
@@ -74,7 +74,7 @@ const LayerSelect = ({ activeCrop, activeLayer, setActiveLayer }: Props) => {
             <Select
               id="layer-select"
               ref={selectRef}
-              className={`mt-3 block w-full appearance-none rounded-lg border-none bg-[#002C39]/5 px-3 py-1.5 text-sm/6 tracking-wide font-semibold text-[#002C39]/75 focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-white/25 *:text-white`}
+              className={`mt-3 block w-full appearance-none rounded-lg border-none bg-[#002C39]/5 px-3 py-1.5 text-sm/6 tracking-widest font-semibold text-[#002C39]/75 focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-white/25 *:text-white`}
               onChange={handleSelect}
               value={activeLayer?.layer ?? ""}
             >
