@@ -28,7 +28,7 @@ const CropSelect = ({ activeCrop, setActiveCrop }: Props) => {
       <Label
         htmlFor="crops"
         // className="block mb-2.5 text-base md:text-xl font-medium text-heading font-league-gothic text-[#002C39] uppercase"
-        className="font-league-gothic text-xl text-[#002C39] font-semibold uppercase"
+        className="font-league-gothic text-lg md:text-2xl text-[#002C39] font-semibold uppercase"
       >
         Crops
       </Label>
@@ -38,7 +38,7 @@ const CropSelect = ({ activeCrop, setActiveCrop }: Props) => {
           ref={selectRef}
           onChange={handleSelect}
           value={activeCrop?.crop ?? ""}
-          className={`mt-3 block w-full appearance-none rounded-lg border-none bg-[#002C39]/5 px-3 py-1.5 text-lg md:text-sm/6 tracking-wide font-semibold text-[#002C39]/75 focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-white/25 *:text-white`}
+          className={`mt-3 block w-full appearance-none rounded-lg border-none bg-[#002C39]/5 px-3 py-1.5 text-sm md:text-lg tracking-wide font-semibold text-[#002C39]/75 focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-white/25 *:text-white`}
         >
           <option value={""}>Select Crop</option>
           {cropLayers.map((crop) => {

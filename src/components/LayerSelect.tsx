@@ -40,7 +40,7 @@ const LayerSelect = ({ activeCrop, activeLayer, setActiveLayer }: Props) => {
   return (
     <div className="mt-4">
       <div className="hidden md:block">
-        <h4 className="font-league-gothic text-lg text-[#002C39] font-semibold uppercase">
+        <h4 className="font-league-gothic text-lg md:text-2xl text-[#002C39] font-semibold uppercase">
           {activeCrop.crop} Layers
         </h4>
         <RadioGroup
@@ -54,7 +54,7 @@ const LayerSelect = ({ activeCrop, activeLayer, setActiveLayer }: Props) => {
               <Radio
                 key={layer.layer}
                 value={layer}
-                className="group font-league-gothic uppercase tracking-wider text-sm w-full md:w-auto font-semibold text-black/75 data-checked:text-white relative cursor-pointer rounded-lg bg-[#FFCC53]/75 px-5 py-4 shadow-md transition focus:not-data-focus:outline-none data-checked:bg-[#63AB46] data-focus:outline data-focus:outline-white"
+                className="group font-league-gothic uppercase tracking-wider text-sm md:text-lg w-full md:w-auto font-semibold text-black/75 data-checked:text-white relative cursor-pointer rounded-lg bg-[#FFCC53]/75 px-5 py-4 shadow-md transition focus:not-data-focus:outline-none data-checked:bg-[#63AB46] data-focus:outline data-focus:outline-white"
               >
                 {layer.label}
               </Radio>
