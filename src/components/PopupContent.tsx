@@ -134,27 +134,27 @@ const PopupContent = ({ map, activeCrop }: Props) => {
                 </h3>
                 <p>District {activeDistrict}</p>
                 {activeCropData && activeCrop && (
-                  <table className="mt-4 w-full text-sm rounded-md overflow-hidden shadow-sm border border-gray-100">
+                  <table className="mt-1 md:mt-4 w-full text-xs md:text-sm rounded-md overflow-hidden shadow-sm border border-gray-100">
                     <caption
-                      className={`text-left text-xs font-bold uppercase tracking-widest text-white ${activeCrop.className} px-4 py-2 caption-top`}
+                      className={`text-left text-xs font-bold uppercase tracking-widest text-white ${activeCrop.className} px-1 md:px-4 py-0.5 md:py-2 caption-top`}
                     >
                       {activeCrop.crop}
                     </caption>
                     <tbody>
                       <tr className="border-b border-gray-100">
-                        <td className="px-2 py-1 md:px-4 md:py-3 text-xs text-gray-500 font-medium">
+                        <td className="px-0.5 py-0.5 md:px-4 md:py-3 text-xs text-gray-500 font-medium">
                           Current
                         </td>
-                        <td className="px-2 py-1 md:px-4 md:py-3 text-xs text-gray-800 font-semibold text-right">
-                          {activeCropData.h}
+                        <td className="px-0.5 py-0.5 md:px-4 md:py-3 text-xs text-gray-800 font-semibold text-right">
+                          {activeCropData.h.toFixed(3)}
                         </td>
                       </tr>
                       <tr>
-                        <td className="px-4 py-3 text-gray-500 font-medium">
+                        <td className="px-0.5 py-0.5 md:px-4 md:py-3 text-gray-500 font-medium">
                           Future
                         </td>
-                        <td className="px-2 py-1 md:px-4 md:py-3 text-xs text-gray-800 font-semibold text-right">
-                          {activeCropData.f}
+                        <td className="px-0.5 py-0.5 md:px-4 md:py-3 text-xs text-gray-800 font-semibold text-right">
+                          {activeCropData.f.toFixed(3)}
                         </td>
                       </tr>
                     </tbody>

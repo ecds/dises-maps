@@ -4,14 +4,15 @@ import { base } from "./map_styles/base";
 import { disesMaps } from "./map_styles/crop_layers";
 import PopupContent from "./components/PopupContent";
 import CropSelect from "./components/CropSelect";
-import "maplibre-gl-swipe/style.css";
 import "maplibre-gl/dist/maplibre-gl.css";
-import type { TCrop } from "./map_styles/crop_layers";
-import MapSwiper from "./components/MapSwiper";
+import LayerSelect from "./components/LayerSelect";
+import type { TCrop, TCropLayer } from "./map_styles/crop_layers";
 
 const App = () => {
   const [activeCrop, setActiveCrop] = useState<TCrop | undefined>(undefined);
-  const [activeLayer, setActiveLayer] = useState<string | undefined>(undefined);
+  const [activeLayer, setActiveLayer] = useState<TCropLayer | undefined>(
+    undefined,
+  );
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const [map, setMap] = useState<Map | undefined>(undefined);
   const boundsRef = useRef<LngLatBounds>(
@@ -32,7 +33,7 @@ const App = () => {
 
     _map.setMaxBounds(boundsRef.current);
 
-    setMap(_map);
+    _map.on("load", () => setMap(_map));
 
     return () => {
       _map?.remove();
@@ -48,8 +49,9 @@ const App = () => {
       map.setLayoutProperty(mapLayer, "visibility", "none");
     }
 
+    console.log("🚀 ~ App ~ activeLayer:", activeLayer);
     if (activeLayer)
-      map.setLayoutProperty(activeLayer, "visibility", "visible");
+      map.setLayoutProperty(activeLayer.layer, "visibility", "visible");
   }, [activeLayer, map]);
 
   useEffect(() => {
@@ -68,12 +70,17 @@ const App = () => {
   }, [map]);
 
   return (
-    <div className="flex-col">
+    <div className="flex-col bg-[#FFF4E8]">
       <section className="flex flex-col-reverse md:flex-row justify-between">
-        <div className="w-full md:w-1/3 flex flex-col p-8 h-[150vh]">
+        <div className="w-full md:w-1/3 flex flex-col p-8 h-full md:h-[150vh]">
           <CropSelect
             activeCrop={activeCrop}
             setActiveCrop={setActiveCrop}
+            setActiveLayer={setActiveLayer}
+          />
+          <LayerSelect
+            activeCrop={activeCrop}
+            activeLayer={activeLayer}
             setActiveLayer={setActiveLayer}
           />
         </div>
@@ -85,7 +92,6 @@ const App = () => {
         </div>
       </section>
       <PopupContent map={map} activeCrop={activeCrop} />
-      {map && activeCrop && <MapSwiper map={map} crop={activeCrop} />}
     </div>
   );
 };
