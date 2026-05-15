@@ -49,7 +49,6 @@ const App = () => {
       map.setLayoutProperty(mapLayer, "visibility", "none");
     }
 
-    console.log("🚀 ~ App ~ activeLayer:", activeLayer);
     if (activeLayer)
       map.setLayoutProperty(activeLayer.layer, "visibility", "visible");
   }, [activeLayer, map]);
@@ -84,7 +83,7 @@ const App = () => {
             setActiveLayer={setActiveLayer}
           />
         </div>
-        <div className="w-full md:w-2/3 sticky top-0 h-full">
+        <div className="w-full md:w-2/3 relative md:sticky top-0 h-full">
           <div
             className="h-[50vh] md:h-[calc(100vh-145px)]"
             ref={mapContainerRef}
