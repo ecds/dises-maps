@@ -74,7 +74,7 @@ const LayerSelect = ({ activeCrop, activeLayer, setActiveLayer }: Props) => {
             <Select
               id="layer-select"
               ref={selectRef}
-              className={`mt-3 block w-full appearance-none rounded-lg border-none bg-[#002C39]/5 px-3 py-1.5 text-sm/6 tracking-widest font-semibold text-[#002C39]/75 focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-white/25 *:text-white`}
+              className={`mt-3 block w-full appearance-none rounded-lg border border-[#002C39] bg-[#002C39]/1 px-3 py-1.5 text-sm md:text-lg tracking-wide font-semibold text-[#002C39] focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-white/25`}
               onChange={handleSelect}
               value={activeLayer?.layer ?? ""}
             >
