@@ -1,9 +1,9 @@
 /**
-* Register Shortcode for Remotely Hosted React App
+* Register Shortcode for Remotely Hosted React Components
 */
 function render_map_viz()
 {
-$remote_url = 'https://dises-maps.ecdsdev.org/';
+$remote_url = 'https://dises-public.s3.us-east-1.amazonaws.com';
 
 // Enqueue Remote CSS
 wp_enqueue_style(
